@@ -56,3 +56,81 @@ Ambos atacan aspectos diferentes:
 | --- | --- |
 | Tiene un enfoque macro, haciendo pruebas de caja negra, en las que se valida el comportamiento deseado por el cliente en función de entradas y salidas. Por ejemplo, si se ingresa un usuario con nombre, apellido y cédula, el criterio de aceptación podría ser que se retorne un mensaje que diga que se creó un usuario con tales atributos, y que en la BD efectivamente se haya registrado dicho usuario.| Se enfoca en lo micro, haciendo énfasis en cómo está arquitectado el software (sería poder ver dentro de la caja negra). Se valida que cada método de forma aislada haga lo que debe hacer. |
 | Apunta a validar que el requerimiento del cliente se esté cumpliendo. | Apunta a mantener el código en el mínimo necesario (evitando la sobreingeniería), a diseñar la arquitectura del software de modo tal que este sea entendible, testeable y escalable, es decir, que esté preparado para los cambios. |
+
+----------
+
+
+
+
+Estructura de las Historias de usuarios (HU) y los  Criterios de aceptación para ATDD/TDD
+-----------------------------------------------------
+
+Para llevar a cabo el proceso de ATDD es necesario disminuir al máximo las ambigüedades en las historias de usuario y en lo que estas implican, para esto se establecen ciertos estándares que facilitan su comprensión y la posterior automatización de criterios de aceptación:
+
+  Creación de historias de usuarios: La historias de usuario (HU)
+   representan las funcionalidades necesitadas por el cliente desde su
+   punto de vista y en su lenguaje, es decir, un lenguaje no técnico, y
+   expresan de forma concreta el qué y no el cómo.
+
+ 
+
+> Todos hemos visto HU escritas de forma vaga o ambigua o inclusa con una redacción tan pobre que solo la persona que las escribió es capaz de entenderlas. Ciertamente qué tan bien estén escritas va a depender de quien se encargue de hacerlo.
+
+De modo de establecer un estándar se ha extendido el uso de este formato:
+
+ 
+
+    Título (Una línea describiendo la historia)
+          Narrativa: 
+          Como [un rol] 
+          Yo quiero [característica] 
+          De manera que [beneficio]
+
+
+Creación de criterios de aceptación: Los criterios de aceptación ayudan a elaborar en detalle la HU (una HU tendrá N criterios de aceptación), estableciendo en conjunto con el cliente las cosas que se deben cumplir o que deben ocurrir para que el cliente considere la HU como completada. La intención de los criterios de aceptación es aumentar la comprensión del alcance de la HU. Deben ser ejemplos concretos y reales del comportamiento que debe presentar el sistema, esto facilitará traducir esos criterios en pruebas automatizadas. Al igual que las HU los criterios de aceptación deben poseer una estructura estándar, de modo que sean de fácil comprensión por todos los Stake Holders, así como para los desarrolladores y analistas. La herramienta Cucumber popularizó el uso del lenguaje Gherkin:
+
+ 
+
+    Criterio de Aceptación: (presentados como Escenarios)
+    	       Escenario 1: Título 
+    		Dado [contexto/precondiciones]
+    		Y [algo más de contexto]... 
+    		Cuando [acción realizada por el usuario] 
+    		Entonces [resultado] 
+    		Y [otro resultado]...
+
+> Nota: No está de más aclarar que se deben hacer los respectivos
+> ajustes gramaticales dependiendo del caso.
+
+Ejemplo:
+
+Historia de usuario:
+    
+Como dueño de una cuenta
+Yo quiero retirar efectivo de un cajero automático
+De manera que pueda tener dinero cuando el banco esté cerrado.
+
+Criterios de aceptación escritos como escenarios de ejemplo.
+
+    Escenario 1: La cuenta tiene suficientes fondos
+    Dado que el balance de la cuenta es $100
+    Y la tarjeta es válida
+    Y el cajero tiene suficiente dinero
+    Cuando el dueño de la cuenta solicita $20
+    Entonces el cajero debe dispensar $20
+    Y el balance de la cuenta debe ser $80
+    Y la tarjeta debe ser retornada
+
+   
+
+    Escenario 2: La cuenta no tiene suficientes fondos
+    Dado que el balance de la cuenta es $10
+    Y la tarjeta es válida
+    Y el cajero tiene suficiente dinero
+    Cuando el dueño de la cuenta solicita $20
+    Entonces el cajero no debe dispensar dinero
+    Y el cajero debe decir que no hay suficientes fondos
+    Y el balance de la cuenta debe ser $10
+    Y la tarjeta debe ser retornada
+
+
