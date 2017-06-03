@@ -2,7 +2,8 @@ Pruebas Unitarias
 -----------------
 
 Son un tipo de prueba automatizada en las que se testea la mínima unidad posible de código, siendo este un método o función. 
-####Características de las pruebas unitarias bien hechas:####
+
+Características de las pruebas unitarias bien hechas:
 
  - Corren rápido.
  - Tienen poca configuración.
