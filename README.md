@@ -24,7 +24,7 @@ En la imagen se aprecia el algoritmo TDD:
  3. Refactor: Se aplican buenas prácticas, se elimina código repetido,
     etc.
 
-![enter image description here](https://lh6.googleusercontent.com/fb7DDzFsPzOh3lU5qH0WCYdqxiO_RK1Ijt5mTShxgoDqQZ1QAVVAFTY6j0fiDGDTI8GmoI0eT8yuC_Y=w1280-h858)
+![ciclotdd](https://lh3.googleusercontent.com/LE4-IvwcIG3KqBN3PMTgAaxWsR8qBOLUJ3jPKWjlXzmE_2bKmYmsok3dw0qMIo7fSZDnD6zh=s0 "ciclo tdd.jpg")
 
 
 ATDD
