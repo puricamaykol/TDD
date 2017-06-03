@@ -74,7 +74,7 @@ Para llevar a cabo el proceso de ATDD es necesario disminuir al máximo las ambi
 
  
 
-> Todos hemos visto HU escritas de forma vaga o ambigua o inclusa con una redacción tan pobre que solo la persona que las escribió es capaz de entenderlas. Ciertamente qué tan bien estén escritas va a depender de quien se encargue de hacerlo.
+> Todos hemos visto HU escritas de forma vaga o ambigua o inclusa con una redacción tan pobre que solo la persona que las escribió es capaz de entenderlas. Ciertamente qué tan bien estén escritas va a depender de quien se encargue de hacerlo. Usar una estructura convencional permite corregir eso.
 
 De modo de establecer un estándar se ha extendido el uso de este formato:
 
