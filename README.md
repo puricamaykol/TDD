@@ -1,7 +1,7 @@
 Pruebas Unitarias
 -----------------
 
-Son un tipo de prueba automatizada en las que se testea la mínima unidad posible de código, siendo este un método o función. 
+Son un tipo de prueba automatizada en las que se testea la mínima unidad posible de código, siendo esta un método o función. 
 
 Características de las pruebas unitarias bien hechas:
 
@@ -154,12 +154,12 @@ Como suele suceder con muchos términos en desarrollo de software se trata de un
 
 **Open/Closed:** Abierta para la extensión y cerrada para la edición. Si el código está funcional y ya pasa todas las pruebas debería quedarse como está, por el contrario deberíamos ser capaces de extender ese código agregando nuevas funcionalidades sin modificar el código original.
 
-**Liskov substitution:** Quizá sea el principio más difícial de entender, dado que quien lo escribió, Bárbara Liskov, usó terminología matemática para postularlo.
+**Liskov substitution:** Quizá sea el principio más difícil de entender, dado que quien lo escribió, Bárbara Liskov, usó terminología matemática para postularlo.
 
 > Sea ϕ(x) una propiedad comprobable acerca de los objetos x de tipo T. Entonces ϕ(y) debe ser verdad para los objetos y del tipo S donde S, es un subtipo de T.
 
  Básicamente implica que si T y S son clases y S es una clase "hija" de T, S debería ser capaz de reemplazar a T, sin que el código falle. Esto describe la herencia de clases.
  
-**Interface segregation:** El código debería estar comprendido por múltiples interfaces (no confundir con la UI), las cuales establecen la arquitectura del mismo, y dado que aplicamos el principio de responsabilidad única, una interfaz tampoco debería establecer métodos que correspondan a múltiples responsabilidades.
+**Interface segregation:** El código debería estar comprendido por múltiples interfaces (no confundir con la UI), las cuales establecen la arquitectura del mismo, y dado que aplicamos el principio de responsabilidad única, una interfaz tampoco debería definir métodos que correspondan a múltiples responsabilidades.
 
-**Dependency Inversion:** La inversión de dependencias, relacionada con la inversión de control y la inyección de dependencias (y confundida también), establece que se invierte la dependencia en el sentido de que nuestro código no depende de una clase concreta, sino que por el contrario depende de una interfaz o contrato.
+**Dependency Inversion:** La inversión de dependencias, relacionada (y confundida) con la inversión de control y la inyección de dependencias, establece que se invierte la dependencia en el sentido de que nuestro código no depende de una clase concreta, sino que por el contrario depende de una interfaz o contrato (una abstracción).
